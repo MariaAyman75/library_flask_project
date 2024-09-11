@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Create New Book{% endblock %}
+
+{% block content %}
+  <h1 style="text-align: center"> Add New Book Via Form </h1>
+
+      {{ render_form(form) }}
+
+{% endblock %}
+

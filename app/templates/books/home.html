@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}All Books{% endblock %}
+
+{% block content %}
+<h1>All Books</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Cover Photo</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td><img src="{{book.image_url}}" alt="{{book.title}}" width="100px" height="100px"></td>
+            <td><a href="{{book.show_url}}" class="btn btn-info"> Show </a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{url_for('books.create')}}" class="btn btn-success">Create New book</a>
+
+{% endblock %}
